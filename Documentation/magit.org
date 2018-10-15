@@ -165,7 +165,7 @@ Now see [[*Post-Installation Tasks]].
 
 ** Installing from the Git Repository
 
-Magit depends on the ~dash~, ~ghub~, ~graphql~, ~magit-popup~, ~treepy~ and
+Magit depends on the ~dash~, ~ghub~, ~graphql~, ~lv~, ~magit-popup~, ~transient~, ~treepy~ and
 ~with-editor~ libraries which are available from Melpa and Melpa-Stable.
 Install them using ~M-x package-install RET <package> RET~.  Of course
 you may also install them manually from their repository.
@@ -183,8 +183,8 @@ Then compile the libraries and generate the info manuals:
   $ make
 #+END_SRC
 
-If you haven't installed ~dash~, ~ghub~, ~graphql~, ~magit-popup~, ~treepy~ and
-~with-editor~ from Melpa or at ~/path/to/magit/../<package>~, then you
+If you haven't installed ~dash~, ~ghub~, ~graphql~, ~lv~, ~magit-popup~, ~transient~, ~treepy~
+and ~with-editor~ from Melpa or at ~/path/to/magit/../<package>~, then you
 have to tell ~make~ where to find them.  To do so create the file
 ~/path/to/magit/config.mk~ with the following content before running
 ~make~:
@@ -194,10 +194,14 @@ have to tell ~make~ where to find them.  To do so create the file
   LOAD_PATH += -L /path/to/dash
   LOAD_PATH += -L /path/to/ghub
   LOAD_PATH += -L /path/to/graphql
+  LOAD_PATH += -L /path/to/hydra
   LOAD_PATH += -L /path/to/magit-popup
+  LOAD_PATH += -L /path/to/transient
   LOAD_PATH += -L /path/to/treepy
   LOAD_PATH += -L /path/to/with-editor
 #+END_SRC
+
+Note that ~lv.el~ is part of the ~hydra~ repository.
 
 Finally add this to your init file:
 
