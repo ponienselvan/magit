@@ -207,7 +207,6 @@ define set_package_requires
      (ghub ,ghub-version)
      (git-commit ,git-commit-version)
      (lv ,lv-version)
-     (magit-popup ,magit-popup-version)
      (transient ,transient-version)
      (with-editor ,with-editor-version)))))
   (goto-char (point-min))
@@ -226,7 +225,6 @@ bump-versions-1:
         (ghub-version \"$(GHUB_VERSION)\")\
         (git-commit-version \"$(GIT_COMMIT_VERSION)\")\
         (lv-version \"$(LV_VERSION)\")\
-        (magit-popup-version \"$(MAGIT_POPUP_VERSION)\")\
         (transient-version \"$(TRANSIENT_VERSION)\")\
         (with-editor-version \"$(WITH_EDITOR_VERSION)\"))\
         $$set_package_requires)"
@@ -239,7 +237,6 @@ bump-snapshots:
         (ghub-version \"$(GHUB_MELPA_SNAPSHOT)\")\
         (git-commit-version \"$(GIT_COMMIT_MELPA_SNAPSHOT)\")\
         (lv-version \"$(LV_MELPA_SNAPSHOT)\")\
-        (magit-popup-version \"$(MAGIT_POPUP_MELPA_SNAPSHOT)\")\
         (transient-version \"$(TRANSIENT_MELPA_SNAPSHOT)\")\
         (with-editor-version \"$(WITH_EDITOR_MELPA_SNAPSHOT)\"))\
         $$set_package_requires)"
