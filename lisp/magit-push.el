@@ -80,9 +80,19 @@ removed after restarting Emacs."
        (concat (propertize "Push " 'face 'transient-heading)
                (propertize branch  'face 'magit-branch-local)
                (propertize " to"   'face 'transient-heading))))
-   ("p" magit--push-current-to-pushremote-desc magit-push-current-to-pushremote)
-   ("u" magit--push-current-to-upstream-desc   magit-push-current-to-upstream)
-   ("e" "elsewhere"                            magit-push-current)]
+   ("p"
+    magit-push-current-to-pushremote
+    :predicate (lambda ()
+                 (or (magit-get-push-branch)
+                     magit-push-current-set-remote-if-missing))
+    :description magit--push-current-to-pushremote-desc)
+   ("u"
+    magit-push-current-to-upstream
+    :predicate (lambda ()
+                 (or (magit-get-upstream-branch)
+                     magit-push-current-set-remote-if-missing))
+    :description magit--push-current-to-upstream-desc)
+   ("e" "elsewhere" magit-push-current)]
   ["Push"
    [("o" "another branch"    magit-push-other)
     ("r" "explicit refspecs" magit-push-refspecs)
