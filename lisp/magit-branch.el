@@ -755,6 +755,7 @@ and also rename the respective reflog file."
   (transient-setup 'magit-branch-configure nil :scope branch))
 
 (define-suffix-command magit-branch.<branch>.description (branch)
+  "TODO"
   :class 'magit--git-variable
   :transient nil
   :variable "branch.%s.description"
